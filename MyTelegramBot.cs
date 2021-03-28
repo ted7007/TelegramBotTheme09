@@ -17,7 +17,7 @@ namespace TelegramBotTheme09
         static TelegramBotClient bot;
         public MyTelegramBot()
         {
-            token = File.ReadAllText("token.txt");
+            token = File.ReadAllText("toke.txt");
             bot = new TelegramBotClient(token);
             bot.OnMessage += MessageLitener;
             if(DownLoadUsers()==false)
