@@ -17,7 +17,9 @@ namespace TelegramBotTheme09
         static TelegramBotClient bot;
         public MyTelegramBot()
         {
-            token = File.ReadAllText("token.txt");
+            string debugpath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(debugpath))));
+            token = File.ReadAllText($@"{path}\token.txt");
             bot = new TelegramBotClient(token);
             bot.OnMessage += MessageLitener;
             if(DownLoadUsers()==false)
